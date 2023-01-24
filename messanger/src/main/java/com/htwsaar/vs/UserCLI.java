@@ -17,31 +17,33 @@ public class UserCLI {
 
     while (true) {
       printMenu();
-      int selection = scanner.nextInt();
+      String selection = scanner.next();
 
-      if (selection == MENU_ITEMS.length) {
+      if (selection.length() == MENU_ITEMS.length) {
         break;
       }
 
       switch (selection) {
-        case 1:
+        case "1":
           sendMessage();
           break;
-        case 2:
+        case "2":
           receiveMessage();
           break;
-        case 3:
+        case "3":
           createGroupChat();
           break;
-        case 4:
+        case "4":
           addUserToGroupChat();
           break;
-        case 5:
+        case "5":
           removeUserToGroupChat();
           break;
-        case 6:
+        case "6":
           System.exit(0);
           break;
+        default:
+          System.out.println("Falsche eingabe!");
       }
     }
   }

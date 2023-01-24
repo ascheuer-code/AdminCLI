@@ -15,25 +15,27 @@ public class CLI {
 
         while (true) {
             printMenu();
-            int selection = scanner.nextInt();
+            String selection = scanner.next();
 
-            if (selection == MENU_ITEMS.length) {
+            if (selection.length() == MENU_ITEMS.length) {
                 break;
             }
 
             switch (selection) {
-                case 1:
+                case "1":
                     register();
                     break;
-                case 2:
+                case "2":
                     loginUser();
                     break;
-                case 3:
+                case "3":
                     loginAdmin();
                     break;
-                case 4:
+                case "4":
                     System.exit(0);
                     break;
+                default:
+                    System.out.println("Falsche eingabe!");
             }
         }
     }

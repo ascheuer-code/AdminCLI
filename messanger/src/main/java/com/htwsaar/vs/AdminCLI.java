@@ -20,40 +20,42 @@ public class AdminCLI {
 
     while (true) {
       printMenu();
-      int selection = scanner.nextInt();
+      String selection = scanner.next();
 
-      if (selection == MENU_ITEMS.length) {
+      if (selection.length() == MENU_ITEMS.length) {
         break;
       }
 
       switch (selection) {
-        case 1:
+        case "1":
           configureSystem();
           break;
-        case 2:
+        case "2":
           changeUserPassword();
           break;
-        case 3:
+        case "3":
           resetUserPassword();
           break;
-        case 4:
+        case "4":
           showOnlineUsers();
           break;
-        case 5:
+        case "5":
           showMessagesPerWeek();
           break;
-        case 6:
+        case "6":
           showMessagesPerChatOrGroup();
           break;
-        case 7:
+        case "7":
           showMessagesInTimeRange();
           break;
-        case 8:
+        case "8":
           deleteUser();
           break;
-        case 9:
+        case "9":
           System.exit(0);
           break;
+        default:
+          System.out.println("Falsche eingabe!");
       }
     }
   }
